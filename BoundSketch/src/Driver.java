@@ -107,9 +107,9 @@ public class Driver {
 
     private void getIMDBBoundPerformance(){
         String cmd;
-        String dbName = "imdb";
+        String dbName = "imdb-PRICE";
 
-        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/join-order-benchmark/";
+        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/imdb_test/";
         java.sql.ResultSet rs;
         long t, start, stop;
         double boundAvgSeconds;
@@ -213,9 +213,9 @@ public class Driver {
 
     private void getIMDBSketchPreprocessingTime() {
         String cmd;
-        String dbName = "imdb";
+        String dbName = "imdb-PRICE";
 
-        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/join-order-benchmark/";
+        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/imdb_test/";
         Timer timer;
 
         try {
@@ -246,8 +246,8 @@ public class Driver {
     private void getIMDBDefaultPerformance(){
         String cmd;
 
-        String dbName = "imdb";
-        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/join-order-benchmark/";
+        String dbName = "imdb-PRICE";
+        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/imdb_test/";
         java.sql.ResultSet rs;
         long t;
         double defaultAvgSeconds;
