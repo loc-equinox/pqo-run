@@ -867,7 +867,7 @@ public class QueryGraph {
         while(permutationIterator.hasNext()){
             rList = permutationIterator.next();
 
-            /* we only care about join queries and won't write an entry in /Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt for single relation sub-queries */
+            /* we only care about join queries and won't write an entry in /Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt for single relation sub-queries */
             if(rList.size() <= 1) continue;
 
             HashMap<Relation, Boolean> allRels = new HashMap<>();
@@ -993,7 +993,7 @@ public class QueryGraph {
             /* relations (only created after propagating selections) */
             /* boundFormulae (already set up and only used later) */
 
-            /* contruct the probe key for /Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt */
+            /* contruct the probe key for /Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt */
             String[] allTableAliases = new String[qg.relToName.keySet().size()];
             int i = 0;
             for(Relation r: qg.relToName.keySet()) {
@@ -1047,12 +1047,12 @@ public class QueryGraph {
 
         try {
             // PrintWriter allInfoWriter = new PrintWriter(new FileOutputStream(
-            //         new File("all_/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt"),
+            //         new File("all_/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt"),
             //         true));
             // allInfoWriter.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             // allInfoWriter.println("CURRENT QUERY: " + this.queryID);
 
-            PrintWriter infoWriter = new PrintWriter("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt");
+            PrintWriter infoWriter = new PrintWriter("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt");
             for(int i=0; i<subgraphKeys.size(); i++){
                 infoWriter.println(subgraphKeys.get(i) + subgraphBounds.get(i));
                 // allInfoWriter.println(subgraphKeys.get(i) + subgraphBounds.get(i));

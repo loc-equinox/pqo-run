@@ -4146,8 +4146,8 @@ calc_joinrel_size_estimate(PlannerInfo *root,
     }
 
     /* probe the text file with your key */
-	fp = fopen("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt","r+");
-	fp2 = fopen("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/log.txt","a+");
+	fp = fopen("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt","r+");
+	fp2 = fopen("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/log.txt","a+");
 
 	len_t = strlen(key);
 

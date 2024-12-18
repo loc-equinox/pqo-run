@@ -109,7 +109,7 @@ public class Driver {
         String cmd;
         String dbName = "imdb";
 
-        String dir = "/Users/leshanchen/James/CS/lab-work/pqo-opensource/join-order-benchmark/";
+        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/join-order-benchmark/";
         java.sql.ResultSet rs;
         long t, start, stop;
         double boundAvgSeconds;
@@ -123,7 +123,7 @@ public class Driver {
                     System.out.println("CURRENT QUERY: " + candidate + ". CURRENT HASH SIZE: " + b);
 
                     PrintWriter logWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/log.txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/log.txt"),
                             true));
                     logWriter.println("NEW QUERY: " + candidate +  "|CURRENT HASH SIZE: " + b);
                     logWriter.close();
@@ -143,7 +143,7 @@ public class Driver {
                     stop = System.nanoTime();
 
                     PrintWriter sketchTimingWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/sketch_preprocessing_" + b + ".txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/sketch_preprocessing_" + b + ".txt"),
                             true));
                     sketchTimingWriter.println((stop - start) / 1000000000.0);
                     sketchTimingWriter.close();
@@ -156,7 +156,7 @@ public class Driver {
 
                     /* warm start the engine and get explanation */
                     PrintWriter rawBoundWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/raw/" + dbName + "/bound_" + b + ".txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/raw/" + dbName + "/bound_" + b + ".txt"),
                             true));
                     rawBoundWriter.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                     rawBoundWriter.println("CURRENT QUERY: " + candidate);
@@ -190,7 +190,7 @@ public class Driver {
                     }
 
                     PrintWriter planTimerWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/plan_execution_time_" + b + ".txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/plan_execution_time_" + b + ".txt"),
                             true));
                     planTimerWriter.println(boundAvgSeconds);
                     planTimerWriter.close();
@@ -215,7 +215,7 @@ public class Driver {
         String cmd;
         String dbName = "imdb";
 
-        String dir = "/Users/leshanchen/James/CS/lab-work/pqo-opensource/join-order-benchmark/";
+        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/join-order-benchmark/";
         Timer timer;
 
         try {
@@ -247,7 +247,7 @@ public class Driver {
         String cmd;
 
         String dbName = "imdb";
-        String dir = "/Users/leshanchen/James/CS/lab-work/pqo-opensource/join-order-benchmark/";
+        String dir = "/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/join-order-benchmark/";
         java.sql.ResultSet rs;
         long t;
         double defaultAvgSeconds;
@@ -255,8 +255,8 @@ public class Driver {
         int repetitions = 5;
 
         try {
-            /* clear /Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt */
-            PrintWriter infoWriter = new PrintWriter("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt");
+            /* clear /Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt */
+            PrintWriter infoWriter = new PrintWriter("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt");
             infoWriter.close();
 
             for (String candidate : this.candidates) {
@@ -272,7 +272,7 @@ public class Driver {
 
                 /* warm start the engine and get explanation */
                 PrintWriter rawDefaultWriter = new PrintWriter(new FileOutputStream(
-                        new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/raw/" + dbName + "/default.txt"),
+                        new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/raw/" + dbName + "/default.txt"),
                         true));
                 rawDefaultWriter.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                 rawDefaultWriter.println("CURRENT QUERY: " + candidate);
@@ -283,7 +283,7 @@ public class Driver {
                     rawDefaultWriter.println("TIME LIMIT REACHED");
                     defaultAvgSeconds = 60.0 * 60.0;
                     PrintWriter resultWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/default.txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/default.txt"),
                             true));
                     resultWriter.println(defaultAvgSeconds);
                     resultWriter.close();
@@ -318,7 +318,7 @@ public class Driver {
                 }
 
                 PrintWriter resultWriter = new PrintWriter(new FileOutputStream(
-                        new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/default.txt"),
+                        new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/default.txt"),
                         true));
                 resultWriter.println(defaultAvgSeconds);
                 resultWriter.close();
@@ -367,7 +367,7 @@ public class Driver {
                     System.out.println("CURRENT QUERY: " + candidate + ". CURRENT HASH SIZE: " + b);
 
                     PrintWriter logWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/log.txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/log.txt"),
                             true));
                     logWriter.println("NEW QUERY: " + candidate +  "|CURRENT HASH SIZE: " + b);
                     logWriter.close();
@@ -387,7 +387,7 @@ public class Driver {
                     stop = System.nanoTime();
 
                     PrintWriter sketchTimingWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/sketch_preprocessing_" + b + ".txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/sketch_preprocessing_" + b + ".txt"),
                             true));
                     sketchTimingWriter.println((stop - start) / 1000000000.0);
                     sketchTimingWriter.close();
@@ -400,7 +400,7 @@ public class Driver {
 
                     /* warm start the engine and get explanation */
                     PrintWriter rawBoundWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/raw/" + dbName + "/bound_" + b + ".txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/raw/" + dbName + "/bound_" + b + ".txt"),
                             true));
                     rawBoundWriter.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                     rawBoundWriter.println("CURRENT QUERY: " + candidate);
@@ -411,7 +411,7 @@ public class Driver {
                         rawBoundWriter.println("TIME LIMIT REACHED");
                         boundAvgSeconds = 60.0 * 60.0;
                         PrintWriter planTimerWriter = new PrintWriter(new FileOutputStream(
-                                new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/plan_execution_time_" + b + ".txt"),
+                                new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/plan_execution_time_" + b + ".txt"),
                                 true));
                         planTimerWriter.println(boundAvgSeconds);
                         planTimerWriter.close();
@@ -446,7 +446,7 @@ public class Driver {
                         }
 
                         PrintWriter planTimerWriter = new PrintWriter(new FileOutputStream(
-                                new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/plan_execution_time_" + b + ".txt"),
+                                new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/plan_execution_time_" + b + ".txt"),
                                 true));
                         planTimerWriter.println(boundAvgSeconds);
                         planTimerWriter.close();
@@ -492,8 +492,8 @@ public class Driver {
         Arrays.sort(this.candidates);
 
         try {
-            /* clear /Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt */
-            PrintWriter infoWriter = new PrintWriter("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/info.txt");
+            /* clear /Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt */
+            PrintWriter infoWriter = new PrintWriter("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/info.txt");
             infoWriter.close();
 
             for (String candidate : this.candidates) {
@@ -509,7 +509,7 @@ public class Driver {
 
                 /* warm start the engine and get explanation */
                 PrintWriter rawDefaultWriter = new PrintWriter(new FileOutputStream(
-                        new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/raw/" + dbName + "/default.txt"),
+                        new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/raw/" + dbName + "/default.txt"),
                         true));
                 rawDefaultWriter.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
                 rawDefaultWriter.println("CURRENT QUERY: " + candidate);
@@ -520,7 +520,7 @@ public class Driver {
                     rawDefaultWriter.println("TIME LIMIT REACHED");
                     defaultAvgSeconds = 60.0 * 60.0;
                     PrintWriter resultWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/default.txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/default.txt"),
                             true));
                     resultWriter.println(defaultAvgSeconds);
                     resultWriter.close();
@@ -557,7 +557,7 @@ public class Driver {
                     }
 
                     PrintWriter resultWriter = new PrintWriter(new FileOutputStream(
-                            new File("/Users/leshanchen/James/CS/lab-work/pqo-opensource/output/results/" + dbName + "/default.txt"),
+                            new File("/Users/leshanchen/James/CS/lab-work/2024.12_cardinality_estimation/datasets/pqo-run/output/results/" + dbName + "/default.txt"),
                             true));
                     resultWriter.println(defaultAvgSeconds);
                     resultWriter.close();
